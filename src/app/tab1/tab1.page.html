@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+    <img [src]="oink" *ngIf="oink" src="../assets/pig.gif" onerror="this.style.display = 'none'" />
+
+    <div class="ratingSystem">
+      <div class="side">
+        <ion-range min="0" max="5" step="1"value="0" placeholder="oinkRating" [(ngModel)]="oinkRating">
+          <ion-icon size="small" slot="start" name="snow-outline"></ion-icon>
+          <ion-icon slot="end" name="flame-outline"></ion-icon>
+        </ion-range>
+      </div>
+      <div class="side">
+        <div *ngIf="!oinkRating || oinkRating == 0">Bad oink</div>
+          <div *ngIf="oinkRating == 1">Medicore oink</div>
+          <div *ngIf="oinkRating == 2">Okay oink</div>
+          <div *ngIf="oinkRating == 3">Fine oink</div>
+          <div *ngIf="oinkRating == 4">Better oink</div>
+          <div *ngIf="oinkRating == 5">Best oink</div>
+        </div>
+      <div class="rateBtn">
+        <button>submit pig rating</button>
+      </div>
+    </div>
+
+</ion-content>
